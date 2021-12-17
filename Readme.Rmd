@@ -1,0 +1,46 @@
+---
+title: "Guide to reproduce the analysis and results of the paper:"
+output: html_document
+---
+## Morwinsky, S., Nitsche, N., Acosta, E. (2021): COVID-19 fatality in Germany: Demographic determinants of variation in case-fatality rates across and within German federal states during the first and second waves. Demographic Research.
+
+********************************************************************************
+
+Analysis were run using R version 4.1.1, necessary R packages are given in the code.
+
+The reproducible material is structured as follows:  
+Folder "Analysis" containing:  
+- R-project "covid_germany.Rproj"  
+- /Code -> R programs for analysis and plots  
+- /Data -> data input  
+- /Figures -> created figures  
+- /Output -> intermediate data created as part of the analysis  
+
+To reproduce the analysis, first open the R-project. Then, run the code starting 
+from "00_Functions.R" until "09_Kitagawa_Decomp.R".  
+- "00_Functions.R": provides used functions used in the following analysis.   
+- "01_Input.R": loads and prepares data for the following analysis.  
+- "02_First_Measures.R": computes some first measures for the following analysis.  
+- "03_Plot_Daily_Cases_Deaths.R": produces figure 1 with daily new cases, daily
+new deaths, and case-fatality rate.  
+- "04_Plot_Age_Comp.R": produces plots representing the age composition of the
+population, cases, and deaths.  
+- "05_Map_CFR_Feb9.R": produces map of Germany by federal states representing the
+COVID-19 CFRs on Feb 9, 2020.  
+- "06_Plot_Decomp_Horiuchi.R": runs the analysis for the decomposition between
+states using the method by Horiuchi et al. and produces the respective plot.  
+- "07_Decomp_Over_Time1_1.R": runs the analysis for the decomposition over time
+for the first period using the method by Kitagawa.  
+- "08_Decomp_Over_Time1_2.R": runs the analysis for the decomposition over time
+for the second period using the method by Kitagawa.  
+- "09_Plot_Kitagawa_Decomp.R": produces the plot for both decompositions over time.  
+
+Additional material, not shown in the paper:  
+(shown in: https://doi.org/10.4054/MPIDR-TR-2021-002)  
+- "s02a_Germany_population_change.R": calculates sensitivity analysis for a change 
+in the German population.  
+- "s02c_Pop_change_robustness_check.R": produces plots for decompositions over time
+considering a change in the population and constant time spans as sensitivity checks.  
+- "s03&04_covid_tests_analysis.R": produces plots showing (1) the correlation between
+testing coverage and CFR levels and (2) daily CFR values and testing coverage by states.  
+
